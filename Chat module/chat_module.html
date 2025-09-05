@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHATBOT with Predefined Inputs</title>
+    <link rel="stylesheet" href="chat_module.css">
+    <style>
+        #predefined-inputs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        #predefined-inputs button {
+            margin: 5px;
+            padding: 10px 15px;
+            border: none;
+            background-color: #56e1d3;
+            color: rgb(14, 1, 1);
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #predefined-inputs button:hover {
+            background-color: #f10353;
+        }
+    </style>
+</head>
+<body>
+    <h2>CHATBOT</h2>
+    <div id="predefined-inputs">
+        <button onclick="handlePredefinedInput('hi')">Hi</button>
+        <button onclick="handlePredefinedInput('hello')">Hello</button>
+        <button onclick="handlePredefinedInput('how are you')">How are you?</button>
+        <button onclick="handlePredefinedInput('what is your name')">What is your name?</button>
+        <button onclick="handlePredefinedInput('tell me a joke')">Tell me a joke</button>
+        <button onclick="handlePredefinedInput('bye')">Goodbye</button>
+        <button onclick="handlePredefinedInput('good morning')">Good morning</button>
+        <button onclick="handlePredefinedInput('good night')">Good night</button>
+        <button onclick="handlePredefinedInput('thank you')">Thank you</button>
+        <button onclick="handlePredefinedInput('thanks')">Thanks</button>
+    </div>
+    <div id="chatbox"></div>
+    <input type="text" id="userInput" placeholder="Type a message...">
+    <button onclick="sendMessage()">Send</button>
+    <script src="chat_module.js"></script>
+    <script>
+        function handlePredefinedInput(input) {
+            document.getElementById("userInput").value = input;
+            sendMessage();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+a{
+    text-decoration: none;
+    color: brown;
+}
+a:hover{
+    color: blueviolet;
+}
+a:active{
+    color:aquamarine;
+}
+#id1{
+    padding: 10px;
+    border: 10px solid skyblue;
+    float:left;
+    width: 33.3%;
+}
+#id2{
+    float:right;
+    width: 33.3%;
+}
+#id3{ 
+    float:right;
+    width: 33.3%;
+}

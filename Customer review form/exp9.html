@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Customer Review Form</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #f5af19, #f12711);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #333;
+        }
+
+        .form-container {
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form-container:hover {
+            transform: scale(1.03);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 14px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.9);
+            transition: border-color 0.3s ease, background 0.3s ease;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: #f12711;
+            background: #fff;
+            outline: none;
+        }
+
+        .stars {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+        }
+
+        .stars input {
+            display: none;
+        }
+
+        .stars label {
+            font-size: 24px;
+            color: #ccc;
+            cursor: pointer;
+        }
+
+        .stars label:hover, .stars label:hover ~ label, .stars input:checked ~ label {
+            color: #f12711;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background-color: #f12711;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #d11009;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 28px;
+            color: #333;
+        }
+
+        #message {
+            margin-top: 15px;
+            text-align: center;
+            font-weight: bold;
+            color: #28a745;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2> Customer Review Form</h2>
+        <form id="reviewForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+            <label for="phone">Mobile Number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Your Mobile Number" required>
+
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" placeholder="Your Address" rows="3" required></textarea>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="">Select</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="rating">Rating:</label>
+            <div class="stars">
+                <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
+                <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
+                <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
+                <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
+                <input type="radio" id="star5" name="rating" value="5"><label for="star5">★</label>
+            </div>
+
+            <label for="review">Review:</label>
+            <textarea id="review" name="review" placeholder="Share your thoughts..." rows="5" required></textarea>
+
+            <button type="submit">Submit Review</button>
+        </form>
+        <p id="message"></p>
+    </div>
+    <script>
+        document.getElementById("reviewForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const name = document.getElementById("name").value;
+            const address = document.getElementById("address").value
+            const email = document.getElementById("email").value;
+            const phone = document.getElementById("phone").value;
+            const dob = document.getElementById("dob").value;
+            const gender = document.getElementById("gender").value;
+            const rating = document.querySelector("input[name='rating']:checked")?.value || "No rating";
+            const review = document.getElementById("review").value;
+
+            if (name && address && email && phone && dob && gender && review) {
+                document.getElementById("message").textContent = `Thank you, ${name}! Your review has been submitted.`;
+                document.getElementById("reviewForm").reset();
+            } else {
+                document.getElementById("message").textContent = "Please fill out all the fields.";
+            }
+        });
+    </script>
+</body>
+</html>

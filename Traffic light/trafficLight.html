@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Traffic Light with Counter</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.5s ease;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      text-align: center;
+    }
+    .traffic-light {
+      width: 100px;
+      background: #333;
+      padding: 20px;
+      border-radius: 20px;
+      margin: 0 auto 20px;
+    }
+    .light {
+      width: 60px;
+      height: 60px;
+      margin: 10px auto;
+      border-radius: 50%;
+      background: #555;
+      transition: background 0.3s;
+    }
+    .red.active {
+      background: red;
+    }
+    .yellow.active {
+      background: yellow;
+    }
+    .green.active {
+      background: limegreen;
+    }
+    .btn {
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      background: #444;
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: #666;
+    }
+    .counter {
+      margin-top: 10px;
+      font-size: 1.2rem;
+      color: #fff;
+    }
+  </style>
+</head>
+<body style="background-color: #333;">
+  <div class="container">
+    <div class="traffic-light">
+      <div class="light red"></div>
+      <div class="light yellow"></div>
+      <div class="light green"></div>
+    </div>
+    <button class="btn" onclick="changeLight()">Next</button>
+    <div class="counter">Clicks: <span id="clickCount">0</span></div>
+  </div>
+
+  <script>
+    const lights = document.querySelectorAll('.light');
+    const clickCountEl = document.getElementById('clickCount');
+    const body = document.body;
+    let index = 0;
+    let clickCount = 0;
+
+    function changeLight() {
+      lights.forEach(light => light.classList.remove('active'));
+      const colors = ['red', 'yellow', 'green'];
+      lights[index].classList.add('active');
+
+      // Change background color
+      if (colors[index] === 'red') body.style.backgroundColor = '#ff4c4c';
+      else if (colors[index] === 'yellow') body.style.backgroundColor = '#ffeb3b';
+      else if (colors[index] === 'green') body.style.backgroundColor = '#4caf50';
+
+      index = (index + 1) % lights.length;
+      clickCount++;
+      clickCountEl.textContent = clickCount;
+    }
+  </script>
+</body>
+</html>

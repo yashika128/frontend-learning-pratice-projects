@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="hey.css">
+</head>
+<body>
+    <ul>
+        <li>maggie</li>
+        <li>kurkure</li>
+        <li>coke</li>
+    </ul>
+    <a href="#">link 1</a>
+    <p id="id1">Was it just another game of hide and seek? No. It was not. First, she fell into a deep, dark hole in the ground and then they found a treasure. Did it end there? No! It did not. Read more about this thrilling adventure of Sally and friends in this free illustrated kids’ book. The fun never ends when Sally’s around!</p>
+    <p id="id1">James, his sister Sally, and Mark, their BFF (Best Friend Forever) were bored. They had played all day but now that it was dark and difficult to see, they had nothing to do.
+        They couldn’t play soccer because they couldn’t see the ball. They didn’t want to go inside and play a game because it was a beautiful springtime night and they liked being outside, especially after having to play inside all winter long. They just didn’t know what to do and it was a little too early for them to go home.
+        “I guess I’ll just go home,” Mark said in a sad voice. “Aww come on,” replied James. “We still have time for another game of – of something.”</p>
+    <p id="id1">James, his sister Sally, and Mark, their BFF (Best Friend Forever) were bored. They had played all day but now that it was dark and difficult to see, they had nothing to do.
+        They couldn’t play soccer because they couldn’t see the ball. They didn’t want to go inside and play a game because it was a beautiful springtime night and they liked being outside, especially after having to play inside all winter long. They just didn’t know what to do and it was a little too early for them to go home.
+        “I guess I’ll just go home,” Mark said in a sad voice. “Aww come on,” replied James. “We still have time for another game of – of something.”</p>
+</body>
+</html>
+
+/* General body and layout styling */
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: linear-gradient(135deg, #6b7dff, #ff7d7d);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #333;
+}
+
+/* Container for the password checker */
+.container {
+    text-align: center;
+    background: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    max-width: 380px;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+/* Input field styling */
+input[type="password"] {
+    padding: 12px;
+    width: 90%;
+    margin-bottom: 15px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input[type="password"]:focus {
+    border-color: #6b7dff;
+    box-shadow: 0 0 5px rgba(107, 125, 255, 0.5);
+}
+
+/* Strength bar styling */
+#strength-bar {
+    width: 100%;
+    height: 12px;
+    border-radius: 8px;
+    margin-top: 15px;
+    transition: all 0.4s ease;
+}
+
+/* Text for password strength */
+#password-strength-text {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: opacity 0.3s ease;
+}
+
+/* Weak strength styling */
+.weak {
+    background: linear-gradient(135deg, #ff4d4d, #ff8080);
+    width: 33%;
+    transition: all 0.3s ease;
+}
+
+/* Medium strength styling */
+.medium {
+    background: linear-gradient(135deg, #ffcc00, #ffdd66);
+    width: 66%;
+    transition: all 0.3s ease;
+}
+
+/* Strong strength styling */
+.strong {
+    background: linear-gradient(135deg, #4caf50, #66bb6a);
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+/* Hover effects for container */
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+

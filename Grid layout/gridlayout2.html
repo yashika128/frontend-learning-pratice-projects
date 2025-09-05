@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corrected Grid Layout</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-areas: 
+                "nav nav nav"
+                "article article article"
+                "footer footer footer";
+            grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+            grid-template-rows: 80px auto 80px;
+            grid-gap: 10px;
+            background-color: white;
+            padding: 10px;
+        }
+
+        .box {
+            background-color: blue;
+            color: white;
+            font-size: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+        }
+
+        /* Assign grid areas */
+        .nav   { grid-area: nav; }
+        .article { grid-area: article; background-color: green; }
+        .footer  { grid-area: footer; background-color: darkred; }
+
+        nav a {
+            color: yellow;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box nav">
+            <nav>
+                <a href="mailto:mahi@gmail.com">Contact</a>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+            </nav>
+        </div>
+        <div class="box article">Main Content Area</div>
+        <div class="box footer">Footer</div>
+    </div>
+</body>
+</html>

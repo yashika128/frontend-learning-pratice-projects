@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delicious Food</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('7.jpeg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #333;
+        }
+        header {
+            background-color: red;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+        .nav {
+            display: flex;
+            justify-content: center;
+            background-color: lightyellow;
+        }
+        .nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        .nav ul li {
+            position: relative;
+        }
+        .nav ul li a {
+            display: block;
+            padding: 1rem 2rem;
+            color: black;
+            text-decoration: none;
+        }
+        .nav ul li a:hover {
+            background-color: red;
+        }
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: white;
+        }
+        .dropdown a {
+            color: black;
+            padding: 0.5rem 1rem;
+        }
+        .dropdown a:hover {
+            background-color: #f2f2f2;
+        }
+        .nav ul li:hover .dropdown {
+            display: block;
+        }
+        .content {
+            padding: 2rem;
+            background-color: rgba(255, 255, 255, 0.8);
+            margin: 2rem auto;
+            max-width: 1200px;
+            border-radius: 10px;
+        }
+        .menu-table {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+        }
+        table, th, td {
+            border: 1px solid #100f0f;
+        }
+        th, td {
+            padding: 1rem;
+            text-align: left;
+        }
+        th {
+            background-color: pink;
+        }
+        .menu-img {
+            width: 100px;
+            height: auto;
+            border-radius: 8px;
+        }
+        .contact-form {
+            margin-top: 2rem;
+        }
+        .contact-form input, 
+        .contact-form select, 
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin: 0.5rem 0;
+            border: 1px solid #190202;
+            border-radius: 5px;
+        }
+        .contact-form input[type="submit"] {
+            background-color: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }     
+        .contact-form input[type="submit"]:hover {
+            background-color: rgb(0, 2, 139);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Delicious Food Menu</h1>
+    <p>Your destination for mouth-watering delights!</p>
+    <p>A showcase of some tasty dishes!</p>
+</header>
+
+<div class="nav">
+    <ul>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li>
+            <a href="#">More</a>
+            <div class="dropdown">
+                <a href="#about">About Us</a>
+                <a href="#services">Services</a>
+                <a href="#gallery">Gallery</a>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<div class="content" id="menu">
+    <h2>Our Menu</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Dish Name</th>
+                <th>Price</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="1.jpeg" alt="Pizza" class="menu-img"></td>
+                <td>Pizza</td>
+                <td>$12</td>
+                <td>Classic cheese and tomato pizza with a crispy crust.</td>
+            </tr>
+            <tr>
+                <td><img src="2.jpeg" alt="Sushi" class="menu-img"></td>
+                <td>Sushi</td>
+                <td>$25</td>
+                <td>Assorted fresh sushi with wasabi and soy sauce.</td>
+            </tr>
+            <tr>
+                <td><img src="3.jpeg" alt="Burger" class="menu-img"></td>
+                <td>Burger</td>
+                <td>$8</td>
+                <td>A juicy beef patty sandwiched between fresh buns with vegetables and sauce.</td>
+            </tr>
+            <tr>
+                <td><img src="4.jpeg" alt="Pasta" class="menu-img"></td>
+                <td>Pasta</td>
+                <td>$9</td>
+                <td>Delicious pasta tossed in a rich sauce with herbs and spices.</td>
+            </tr>
+            <tr>
+                <td><img src="5.jpeg" alt="Samosa" class="menu-img"></td>
+                <td>Samosa</td>
+                <td>$7</td>
+                <td>A crispy fried pastry filled with spiced potatoes, peas, and herbs.</td>
+            </tr>
+            <tr>
+                <td><img src="6.jpeg" alt="Red Sauce Pasta" alt="Red Sauce Pasta" class="menu-img"></td>
+                <td>Red Sauce Pasta</td>
+                <td>$8</td>
+                <td>A comforting dish of pasta tossed in a rich, tangy tomato-based sauce.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="content contact-form" id="contact">
+    <h2>Contact Us</h2>
+    <form action="#" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="favorite-dish">Your Favorite Dish:</label>
+        <select id="favorite-dish" name="favorite-dish">
+            <option value="pizza">Pizza</option>
+            <option value="sushi">Sushi</option>
+            <option value="burger">Burger</option>
+            <option value="pasta">Pasta</option>
+            <option value="samosa">Samosa</option>
+            <option value="red-sauce-pasta">Red Sauce Pasta</option>
+        </select>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" placeholder="Your message..."></textarea>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+</body>
+</html>
